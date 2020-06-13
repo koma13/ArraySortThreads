@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
-public class DataHelper {
+public class FileUtils {
 
     public static void fillFileWithData(String fileName) {
         Random random = new Random();
@@ -24,8 +24,8 @@ public class DataHelper {
         }
     }
 
-    public static int[][] readDataToSort(String fileRead) {
-        File dataFile = new File(fileRead);
+    public static int[][] readDataFromFile(String fileName) {
+        File dataFile = new File(fileName);
         String line;
         int[][] array = new int[16][1000];
 
@@ -52,13 +52,5 @@ public class DataHelper {
             System.out.println("No file to read!");
         }
         return array;
-    }
-
-    public static void sortArray(int[][] array) {
-        java.util.Arrays.sort(array, new java.util.Comparator<int[]>() {
-            public int compare(int[] a, int[] b) {
-                return Double.compare(a[0], b[0]);
-            }
-        });
     }
 }
