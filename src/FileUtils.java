@@ -31,15 +31,13 @@ public class FileUtils {
 
         try {
             Scanner scanner = new Scanner(dataFile);
-
             int wers = 0;
 
             while (scanner.hasNextLine()) {
                 line = scanner.nextLine();
-
                 String[] arrLine = line.split(", ");
-                int number = 0;
                 int num = 0;
+                int number;
                 for (String a : arrLine) {
                     number = Integer.parseInt(a);
                     array[wers][num] = number;
